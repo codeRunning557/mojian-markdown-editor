@@ -1,0 +1,6 @@
+node_modules
+dist
+*.log
+release
+docs
+屏幕截图 *.png

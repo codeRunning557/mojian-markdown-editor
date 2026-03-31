@@ -1,0 +1,63 @@
+{
+  "name": "markdown-editor",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Codex",
+  "description": "A desktop Markdown editor inspired by Typora.",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "node scripts/dev.cjs",
+    "dev:renderer": "vite --configLoader native --host 127.0.0.1 --port 5173 --strictPort",
+    "dev:electron": "node scripts/dev-electron.cjs",
+    "build": "vite build --configLoader native",
+    "preview": "vite preview",
+    "pack:win": "npm run build && electron-builder --win dir",
+    "start": "npm run build && node scripts/start-electron.cjs",
+    "dist:win": "npm run build && electron-builder --win portable"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.6",
+    "marked": "^16.2.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "cross-env": "^10.0.0",
+    "electron": "^37.3.1",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7",
+    "wait-on": "^8.0.5"
+  },
+  "build": {
+    "appId": "com.paperflow.editor",
+    "productName": "墨笺 Markdown 编辑器",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "scripts/start-electron.cjs",
+      "package.json"
+    ],
+    "win": {
+      "signAndEditExecutable": false,
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "electronDownload": {
+      "mirror": "https://npmmirror.com/mirrors/electron/"
+    }
+  }
+}
