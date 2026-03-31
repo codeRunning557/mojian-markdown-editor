@@ -42,6 +42,22 @@ npm start
 
 `npm start` 会先构建，再启动桌面应用。
 
+## 普通用户使用
+
+如果你不打算参与开发，建议直接下载打包好的 Windows 可执行版本，而不是从源码启动。
+
+### 下载方式
+
+- 前往 GitHub Releases 页面下载最新发布包
+- Releases 页面：`https://github.com/codeRunning557/mojian-markdown-editor/releases`
+- 优先下载 `win-unpacked` 对应压缩包，或后续提供的便携版 / 安装版
+
+### 启动方式
+
+- 解压发布包
+- 双击 `墨笺 Markdown 编辑器.exe`
+- 首次运行如果被系统提示，请选择“仍要运行”或加入信任
+
 ## 构建目录版应用
 
 ```bash
@@ -68,3 +84,15 @@ src/        React 前端源码
 ## 说明
 
 仓库默认只保留运行和开发所需代码与配置，不包含内部产品规划文档。
+
+## 发布建议
+
+如果你要把应用分发给普通用户，建议通过 GitHub Releases 发布，而不是直接让用户下载源码。
+
+推荐流程：
+
+1. 本地执行 `npm run pack:win`
+2. 从 `release/win-unpacked` 整理出发布包
+3. 在 GitHub 仓库创建一个新的 Release
+4. 上传 `.exe` 或压缩后的目录版应用
+5. 参考仓库根目录的 `RELEASE_NOTES_TEMPLATE.md` 填写发布说明
