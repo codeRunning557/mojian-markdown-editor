@@ -66,6 +66,22 @@ npm run pack:win
 
 构建结果输出到 `release/win-unpacked`。
 
+## 构建发布压缩包
+
+```bash
+npm run dist:zip
+```
+
+适合给不想安装的用户提供备用下载。
+
+## 构建 Windows 安装包
+
+```bash
+npm run dist:win
+```
+
+推荐把 `dist:win` 产出的 NSIS 安装包上传到 GitHub Releases。对于普通用户，它通常比目录版或 portable 更小，也更容易安装。
+
 ## 项目结构
 
 ```text
@@ -92,7 +108,8 @@ src/        React 前端源码
 推荐流程：
 
 1. 本地执行 `npm run pack:win`
-2. 从 `release/win-unpacked` 整理出发布包
-3. 在 GitHub 仓库创建一个新的 Release
-4. 上传 `.exe` 或压缩后的目录版应用
-5. 参考仓库根目录的 `RELEASE_NOTES_TEMPLATE.md` 填写发布说明
+2. 面向普通用户分发时，优先执行 `npm run dist:win`
+3. 如需免安装备用包，再执行 `npm run dist:zip`
+4. 在 GitHub 仓库创建一个新的 Release
+5. 优先上传 NSIS 安装包，zip 可作为备用下载
+6. 参考仓库根目录的 `RELEASE_NOTES_TEMPLATE.md` 填写发布说明

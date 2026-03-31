@@ -13,22 +13,23 @@
     "preview": "vite preview",
     "pack:win": "npm run build && electron-builder --win dir",
     "start": "npm run build && node scripts/start-electron.cjs",
-    "dist:win": "npm run build && electron-builder --win portable"
+    "dist:win": "npm run build && electron-builder --win nsis",
+    "dist:zip": "npm run build && electron-builder --win zip",
+    "dist:portable": "npm run build && electron-builder --win portable"
   },
-  "dependencies": {
-    "dompurify": "^3.2.6",
-    "marked": "^16.2.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
     "cross-env": "^10.0.0",
+    "dompurify": "^3.2.6",
     "electron": "^37.3.1",
     "electron-builder": "^26.0.12",
+    "marked": "^16.2.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "typescript": "^5.9.3",
     "vite": "^7.1.7",
     "wait-on": "^8.0.5"
@@ -36,20 +37,24 @@
   "build": {
     "appId": "com.paperflow.editor",
     "productName": "墨笺 Markdown 编辑器",
+    "artifactName": "${productName}-${version}-${arch}.${ext}",
     "directories": {
       "output": "release"
     },
     "files": [
       "dist/**/*",
       "electron/**/*",
-      "scripts/start-electron.cjs",
       "package.json"
+    ],
+    "electronLanguages": [
+      "zh-CN",
+      "en-US"
     ],
     "win": {
       "signAndEditExecutable": false,
       "target": [
         {
-          "target": "portable",
+          "target": "dir",
           "arch": [
             "x64"
           ]

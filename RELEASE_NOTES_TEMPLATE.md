@@ -9,7 +9,8 @@
 
 - GitHub Releases 下载页：
   `https://github.com/codeRunning557/mojian-markdown-editor/releases`
-- 推荐下载：Windows 目录版 / 便携版发布包
+- 推荐下载：Windows 安装包（`.exe`）
+- 备用下载：zip 压缩包
 
 ## 本次更新
 
