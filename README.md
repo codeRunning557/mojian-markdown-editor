@@ -1,22 +1,69 @@
-# 墨笺 Markdown 编辑器
+﻿# 墨笺 Markdown
 
-墨笺是一款本地优先的 Markdown 桌面编辑器，面向技术文档、教程文档、方案文档和日常写作场景。
+Mojian Markdown 是一款面向 Windows 的本地优先 Markdown 桌面编辑器，适合写技术文档、教程、方案说明和日常笔记。项目基于 Electron、React、Vite 和 TypeScript，强调本地文件可控、中文友好、即时预览，以及可选的 AI 辅助写作能力。
 
-它基于 Electron、React、Vite 和 TypeScript 构建，强调极简界面、Markdown 文件可控、中文友好，以及 AI 辅助写作能力。
+[GitHub Releases](https://github.com/codeRunning557/mojian-markdown-editor/releases)
 
-## 当前功能
+## 当前可用功能
 
-- 打开、保存、另存为本地 Markdown 文件
-- 富文本编辑工作区，内容最终保存为 `.md`
-- 左侧标题大纲与正文跳转
-- 图片引用、图片粘贴、图片拖拽插入
-- 代码块语言标签与复制按钮
-- 导出 HTML
-- 导出 PDF
-- AI 美化预览后应用
-- 翻译预览后应用
-- 右键菜单插入标题、代码块、图片
-- 多套极简主题切换
+- 打开、创建、保存、另存为本地 Markdown 文件
+- 富文本编辑区、实时预览与标题大纲联动
+- 支持图片引用、拖拽插入、粘贴插入
+- 代码块语言标签与一键复制
+- 导出 HTML、导出 PDF
+- 导入 Word `.docx`，预览转换后的 Markdown，并在保存时写入图片资源
+- AI 对话面板，支持改写、扩写、精简、续写
+- 文档或选区翻译预览
+- 内置多套 AI 服务预设，也支持自定义 OpenAI-compatible 接口
+- 提供 AI 请求日志、主题切换、最近文件和异常退出自动恢复
+
+## 安装与使用
+
+普通用户建议直接从 Releases 下载打包版本，而不是从源码启动。当前发布页对应的主要交付物为：
+
+- `墨笺 Markdown.exe`
+- `墨笺 Markdown.zip`
+
+如果你只想使用软件：
+
+1. 从 Releases 下载上述任一 Windows 发布物。
+2. 解压 `墨笺 Markdown.zip`，或直接运行 `墨笺 Markdown.exe`。
+3. 首次运行若被系统提示校验或权限确认，按系统提示继续即可。
+
+## 从源码运行
+
+建议使用较新的 Node.js LTS 版本。
+
+```bash
+npm install
+npm run dev
+```
+
+`npm run dev` 会启动 Vite 开发服务器并拉起 Electron。
+
+如需先构建再启动桌面端：
+
+```bash
+npm start
+```
+
+## 打包方式
+
+项目当前可用的 Windows 打包命令如下：
+
+```bash
+npm run pack:win
+npm run dist:win
+npm run dist:zip
+npm run dist:portable
+```
+
+说明：
+
+- `npm run pack:win` 生成目录版应用，输出到 `release/win-unpacked`
+- `npm run dist:win` 生成 Windows 安装包
+- `npm run dist:zip` 生成 zip 发布包
+- `npm run dist:portable` 生成便携版可执行文件
 
 ## 技术栈
 
@@ -24,92 +71,23 @@
 - React 19
 - Vite
 - TypeScript
+- `marked`
+- `DOMPurify`
+- `mammoth`
+- `turndown`
 
-## 本地开发
-
-```bash
-npm install
-npm run dev
-```
-
-开发模式会启动 Vite 和 Electron。
-
-## 本地运行
-
-```bash
-npm start
-```
-
-`npm start` 会先构建，再启动桌面应用。
-
-## 普通用户使用
-
-如果你不打算参与开发，建议直接下载打包好的 Windows 可执行版本，而不是从源码启动。
-
-### 下载方式
-
-- 前往 GitHub Releases 页面下载最新发布包
-- Releases 页面：`https://github.com/codeRunning557/mojian-markdown-editor/releases`
-- 优先下载 `win-unpacked` 对应压缩包，或后续提供的便携版 / 安装版
-
-### 启动方式
-
-- 解压发布包
-- 双击 `墨笺 Markdown 编辑器.exe`
-- 首次运行如果被系统提示，请选择“仍要运行”或加入信任
-
-## 构建目录版应用
-
-```bash
-npm run pack:win
-```
-
-构建结果输出到 `release/win-unpacked`。
-
-## 构建发布压缩包
-
-```bash
-npm run dist:zip
-```
-
-适合给不想安装的用户提供备用下载。
-
-## 构建 Windows 安装包
-
-```bash
-npm run dist:win
-```
-
-推荐把 `dist:win` 产出的 NSIS 安装包上传到 GitHub Releases。对于普通用户，它通常比目录版或 portable 更小，也更容易安装。
-
-## 项目结构
+## 仓库结构
 
 ```text
 electron/   Electron 主进程与预加载脚本
-scripts/    启动与构建辅助脚本
+scripts/    开发启动与桌面端辅助脚本
 src/        React 前端源码
+docs/       补充文档
+release/    本地打包输出目录
 ```
-
-## 适合的使用场景
-
-- 技术部署文档
-- 运维排障文档
-- API 或方案说明文档
-- Markdown 日常写作
 
 ## 说明
 
-仓库默认只保留运行和开发所需代码与配置，不包含内部产品规划文档。
-
-## 发布建议
-
-如果你要把应用分发给普通用户，建议通过 GitHub Releases 发布，而不是直接让用户下载源码。
-
-推荐流程：
-
-1. 本地执行 `npm run pack:win`
-2. 面向普通用户分发时，优先执行 `npm run dist:win`
-3. 如需免安装备用包，再执行 `npm run dist:zip`
-4. 在 GitHub 仓库创建一个新的 Release
-5. 优先上传 NSIS 安装包，zip 可作为备用下载
-6. 参考仓库根目录的 `RELEASE_NOTES_TEMPLATE.md` 填写发布说明
+- 应用目前以 Windows 桌面端为主
+- Markdown 文件始终保存在本地，AI 配置也会优先保存在用户私有位置
+- 仓库首页说明以当前代码实现为准，发布页以最新 Release 为准
