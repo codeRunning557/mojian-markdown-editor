@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "author": "Codex",
-  "description": "A desktop Markdown editor inspired by Typora.",
+  "description": "A local-first desktop Markdown editor for Windows.",
   "main": "electron/main.js",
   "scripts": {
     "dev": "node scripts/dev.cjs",
@@ -40,7 +40,7 @@
   },
   "build": {
     "appId": "com.paperflow.editor",
-    "productName": "墨笺 Markdown 编辑器",
+    "productName": "\u58a8\u7b3a Markdown \u7f16\u8f91\u5668",
     "artifactName": "${productName}-${version}-${arch}.${ext}",
     "directories": {
       "output": "release"
@@ -77,3 +77,4 @@
     }
   }
 }
+

@@ -3,4 +3,9 @@ dist
 *.log
 release
 docs
+.backup
+ai-profiles.jsonc
+ai-profiles.local.json
+墨笺 Markdown.exe
+墨笺 Markdown.zip
 屏幕截图 *.png

@@ -1,4 +1,4 @@
-﻿# 墨笺 Markdown 编辑器 Release Notes Template
+# 墨笺 Markdown 编辑器 Release Notes Template
 
 ## 简体中文
 
@@ -11,8 +11,8 @@
 
 - GitHub Releases：
   [https://github.com/codeRunning557/mojian-markdown-editor/releases](https://github.com/codeRunning557/mojian-markdown-editor/releases)
-- 推荐下载：Windows 安装包 `.exe`
-- 备用下载：目录版 `.zip`
+- 推荐下载：`墨笺 Markdown.exe`
+- 备用下载：`墨笺 Markdown.zip`
 
 ### 本次更新
 
@@ -28,6 +28,7 @@
 - 打开、保存、另存为本地 Markdown 文件
 - 富文本编辑工作区
 - 左侧标题大纲导航
+- 右侧 AI 会话面板与多模型配置
 - 图片引用、拖拽插入、粘贴插入
 - 代码块语言标签与复制
 - 导出 HTML / PDF
@@ -37,9 +38,9 @@
 
 ### 安装与运行
 
-1. 下载 Release 附件并解压
-2. 安装版：双击安装包完成安装
-3. 目录版：进入文件夹后双击 `墨笺 Markdown 编辑器.exe`
+1. 下载 Release 附件
+2. 安装版：双击 `墨笺 Markdown.exe`
+3. 压缩包版：解压 `墨笺 Markdown.zip` 后运行其中的应用
 4. 如果遇到系统安全提示，请选择“仍要运行”
 
 ### 已知说明
@@ -67,8 +68,8 @@
 
 - GitHub Releases：
   [https://github.com/codeRunning557/mojian-markdown-editor/releases](https://github.com/codeRunning557/mojian-markdown-editor/releases)
-- 建議下載：Windows 安裝包 `.exe`
-- 備用下載：目錄版 `.zip`
+- 建議下載：`墨笺 Markdown.exe`
+- 備用下載：`墨笺 Markdown.zip`
 
 ### 本次更新
 
@@ -84,6 +85,7 @@
 - 開啟、儲存、另存新檔本地 Markdown 檔案
 - 富文本編輯工作區
 - 左側標題大綱導航
+- 右側 AI 對話面板與多模型設定
 - 圖片引用、拖曳插入、貼上插入
 - 程式碼區塊語言標籤與複製
 - 匯出 HTML / PDF
@@ -93,9 +95,9 @@
 
 ### 安裝與執行
 
-1. 下載 Release 附件並解壓
-2. 安裝版：雙擊安裝包完成安裝
-3. 目錄版：進入資料夾後雙擊 `墨箋 Markdown 編輯器.exe`
+1. 下載 Release 附件
+2. 安裝版：雙擊 `墨笺 Markdown.exe`
+3. 壓縮包版：解壓 `墨笺 Markdown.zip` 後執行其中的應用
 4. 若遇到系統安全提示，請選擇「仍要執行」
 
 ### 已知說明
@@ -123,8 +125,8 @@
 
 - GitHub Releases:
   [https://github.com/codeRunning557/mojian-markdown-editor/releases](https://github.com/codeRunning557/mojian-markdown-editor/releases)
-- Recommended: Windows installer `.exe`
-- Alternative: portable directory `.zip`
+- Recommended: `墨笺 Markdown.exe`
+- Alternative: `墨笺 Markdown.zip`
 
 ### What's New
 
@@ -140,6 +142,7 @@
 - Open, save, and save-as local Markdown files
 - Rich-text editing workspace
 - Left-side outline navigation
+- Right-side AI chat panel with multi-model configuration
 - Image reference, drag-and-drop insertion, and paste insertion
 - Code block language labels with copy support
 - Export to HTML / PDF
@@ -149,9 +152,9 @@
 
 ### Install and Run
 
-1. Download the release asset and extract it if needed
-2. Installer version: run the `.exe` installer
-3. Directory version: open the folder and launch `Mojian Markdown Editor.exe`
+1. Download the release asset
+2. Installer version: run `墨笺 Markdown.exe`
+3. Zip version: extract `墨笺 Markdown.zip` and launch the app inside
 4. If Windows shows a security prompt, choose to continue running
 
 ### Known Notes
